@@ -1,12 +1,4 @@
-import express from 'express'
+import { Server } from './src/server/server'
 
-
-const app = express()
-
-app.get('/', (_req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(3000, () => {
-  console.log('Example app listening at http://localhost:3000')
-})
+const server = new Server()
+server.start()
