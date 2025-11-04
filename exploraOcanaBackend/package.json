@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon main.ts",
-    "lint": "npx @biomejs/biome check"
+    "check": "npx @biomejs/biome check --write ."
   },
   "keywords": [],
   "author": "",
@@ -13,12 +13,17 @@
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
     "@biomejs/biome": "2.3.2",
+    "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.5",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg-promise": "^12.2.0",
+    "zod": "^4.1.12"
   }
 }

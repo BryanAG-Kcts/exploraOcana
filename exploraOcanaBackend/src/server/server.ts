@@ -1,5 +1,6 @@
 import express, { type Express } from 'express'
-import { registerRouter } from '../routes/register.routes'
+import { authRouter } from '../routes/auth.routes'
+import { environment } from './environment'
 
 export class Server {
   app: Express
@@ -13,14 +14,16 @@ export class Server {
   }
 
   routes() {
-    this.app.use(registerRouter)
+    this.app.use('/auth', authRouter)
   }
 
   start() {
     this.middlewares()
     this.routes()
-    this.app.listen(3000, () => {
-      console.log('Example app listening at http://localhost:3000')
+    this.app.listen(environment.port, () => {
+      console.log(
+        `Example app listening at http://localhost:${environment.port}`
+      )
     })
   }
 }
