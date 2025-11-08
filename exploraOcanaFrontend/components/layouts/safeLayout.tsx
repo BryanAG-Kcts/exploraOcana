@@ -12,7 +12,7 @@ interface Props {
 }
 export function SafeLayout({ children, sizes = 'none' }: Props) {
   return (
-    <SafeAreaView className={`${className[sizes]} mx-auto p-4`}>
+    <SafeAreaView className={`${className[sizes]} mx-auto p-4 w-full`}>
       {children}
     </SafeAreaView>
   )
