@@ -1,19 +1,30 @@
+import { Link } from 'expo-router'
+import { ArrowLeft, SendIcon } from 'lucide-react-native'
 import { View } from 'react-native'
 import { SafeLayout } from '@/components/layouts/safeLayout'
-import { Button, ButtonIcon } from '@/components/ui/button'
+import { Form } from '@/components/pages/register/form'
 import { Heading } from '@/components/ui/heading'
-import { ArrowLeftIcon } from '@/components/ui/icon'
+import { Icon } from '@/components/ui/icon'
+import { Text } from '@/components/ui/text'
 
 export default function Register() {
   return (
     <SafeLayout>
-      <View className='flex-row'>
-        <Button size='xl' variant='link'>
-          <ButtonIcon as={ArrowLeftIcon} />
-        </Button>
-      </View>
+      <View className='gap-7 flex-1'>
+        <Link dismissTo href='/'>
+          <Icon size='2xl' as={ArrowLeft} />
+        </Link>
 
-      <Heading size='2xl'>Crea tu cuenta</Heading>
+        <View className='items-center pt-10 flex-1 gap-2'>
+          <View className='rounded-full p-5 bg-success-50 mb-7'>
+            <Icon size='4xl' className='text-success-500' as={SendIcon} />
+          </View>
+
+          <Heading size='2xl'>Crea tu cuenta</Heading>
+          <Text>Descubre la historia que nos une</Text>
+          <Form />
+        </View>
+      </View>
     </SafeLayout>
   )
 }
